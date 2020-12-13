@@ -1,0 +1,287 @@
+#10
+a = 5/3 #a는 5 나누기 3
+print(a) #a를 출력하라.
+
+#20
+a = 48584*36 # 총금액(a) = 월48,584원 X 36개월
+print(a,'원') #a와 '원'을 출력하라.
+
+#30
+string = 'abcd' #string은 문자열 'abcd'
+string.replace('b','B') #string문자열은 그대로('abcd')이고 string.replace('b','B')는 새로운 문자열을 생성한것 
+                        #string = string.replace('b','B')로 지정해줘야 문자열 string에 'b'가 'B'로 대체됨 
+print(string) #string을 출력하라.
+
+#40
+data = '  삼성전자  ""
+cleardata = data.strip() #공백이 있는 문자열을 strip()을 사용하여 공백이 없는 문자열로 만들고 claerdata의 변수로 지정
+print(cleardata) #cleardata을 출력하라.
+
+#50
+data2 = '039490     ' 
+cleardata2 = data2.rstrip() #오른쪽 공백이 있는 문자열을 rstrip()을 사용하여 오른쪽 공백이 없는 문자열로 만들고 claerdata2의 변수로 지정
+print(cleardata2) #cleardata2을 출력하라.
+
+#60
+nums = [1,2,3,4,5]
+a = sum(nums) / len(nums) #평균(a)는 nums listd의 총합(sum(nums))을 원소의 개수(len(nums))로 나눔
+print(a) #a을 출력하라.
+
+#70
+data = [2,4,3,1,5,10,9] 
+a = sorted(data) #data list의 원소들를 sorted(data)로 오름차순 정리하여 변수 a에 담는다.
+print(a) #a을 출력하라.
+
+#80
+a = tuple(range(2,99,2)) #2부터 99전까지의 수를 2칸 간격으로 값을 튜플의 원소로 생성하고 변수a에 담는디.
+print(a) #a을 출력하라
+
+#90
+icecream = {'폴라포':1200, '빵빠레':1800, '월드콘':1500, '메로나':1000}  #'폴라포', '빵빠레', '원드콘', '메로나'을 keys값으로 지정하고 
+# 각각의 가격을 values값으로 지정한다. 이값을 icecream이란 딕셔너리에 담는다.    
+print(icecream['누가봐'])  #'누가봐'란 key는 딕셔너리에 없음으로 error가 출력된다. 
+
+#100
+date = ['09/05', '09/06', '09/07', '09/08', '09/09'] #이와 같은 날짜들로 list를 만들어 date란 변수에 담는다.
+close_price = [10500, 10300, 10100, 10800, 11000] #이와 같은 가격들f로 list를 만들어 close_price란 변수에 담는다.
+close_table = dict(zip(date, close_price)) # zip()를 통해 date와 close_price의 원소를 쌍으로 묶어주고 딕셔너리담아 변수 close_table에 담는다.. 
+                                           # 이렇게 묶인 date는 dict에서 keys가 되고 close_price는 values가 된다.
+print(close_table) #close_table을 출력하라.
+
+#110
+if True:            #조건문이 True 임으로 if문에 들어감
+    if False:       #조건문이 False 임으로 거짓일때 else로 들어감
+        print('1')
+        print('2')
+    else:
+        print('3')   #3 출력
+else:
+    print('4')
+print('5') #조건문에 속하지 않는다 그냥 5 출력
+
+#120
+a = '한라봉' #한라봉을 변수 a로 설정
+fruit = {"봄" : "딸기", "여름" : "토마토", "가을" : "사과"} #fruit란 딕셔너리 생성 
+if a in fruit.values():  #if문을 이용하여 fruit란 딕셔너리에 변수a 값인 '한라봉'이 value 값으로 있다면
+    print('좋아하는 과일은?', a) #'좋아하는과일' ,a를 출력하고
+    print('정답입니다.')         #'정답입니다.'를 출력 
+else:  #변수a('한라봉')이 fruit딕셔너리의 value값으로 없으면      
+    print('좋아하는 과일은?', a) #좋아하는과일' a를 출력하고
+    print('오답입니다.')         #'오답입니다.',a를 출력
+
+#130
+import requests
+btc = requests.get("https://api.bithumb.com/public/ticker/").json()['data'] #비트코인의 가격 정보를 딕셔너리로 가져오는 코드.
+변동폭 = float(btc['max_price']) - float(btc['min_price']) #변동폭은 btc에서 'max_price'의 value를 가져와 실수형에 담은것과 
+                                                           #btc에서 'min_price'의 value를 가져와 실수형에 담은것을 뺀값
+시가 = float(btc['opening_price']) #시가는 btc에서 'opening_price'의 value를 가져와 실수형에 담은것
+최고가 = float(btc['max_price']) #최고가는 btc에서 'max_price'의 value를 가져와 실수형에 담은것 
+if (시가+변동폭) > 최고가: #시가+변동폭이 최고가보다 크면 
+    print('상승장')        #'상승장' 출력 
+else:                     #시가+변동폭이 최고가보다 작거나 같으면
+    print('하락장')       #'하락장' 출력
+
+#140
+for i in range(1,5): #(1부터 5전까지)4개의 원소를 변수i에 담은 후 for문을 수행하라.
+    print("-------") #"-------" 출력하라
+
+#150
+리스트 = ["가", "나", "다", "라"]  #가,나,다,라 원소들로 이루어진 리스트 생성
+for i in 리스트[::-1]: #리스트[::-1]를 통해 역방향으로 변수i에 리스트의 변수를 담고 for문을 수행하라.
+    print(i)  #변수i를 출력하라
+
+#160
+리스트 = ['intra.h', 'intra.c', 'define.h', 'run.py'] #변수리스트에 원소가('intra.h', 'intra.c', 'define.h', 'run.py')인 list을 담아라
+for 변수 in 리스트: #변수 리스트의 원소를 변수에 담고 for문을 수행하라.
+  split = 변수.split(".") #list가 담긴 변수의 원소를 '.'을 기준으로 2개의 원소들로 나누어라
+  if (split[1] == "h") or (split[1] == "c"): #split된 2번째 원소가 'h'나 'c'라면   
+    print(변수) #변수값 를 출력하라.
+
+#170
+a = 1 #변수a를 1이라 지정
+for i in range(2,11): #range(2,11) = (2부터 10전까지) 9개의 원소를 변수i에 담고 for문을 수행하라. 
+    a = a*i           #변수a에 i(2부터 전10까지 9개의 원소)를 차례로 곱하고 다시 변수a에 담는다.    
+print(a) #변수a를 출력하라. *for문에 속함x for문을 다 돌리고 변수a를 출력*
+
+#180
+low_prices  = [100, 200, 400, 800, 1000] #low_prices(저가) 리스트 생성
+high_prices = [150, 300, 430, 880, 1000] #high_prices(고가) 리스트 생성
+volatility = [] #volatility(변동폭)의 빈 리스트 생성
+for i in range(len(low_prices)):  #len(low_prices) low_prices리스트의 원소의 개수의 범위(0부터 5전까지) 5개의 원소를 변수i에 담고 for문을 수행하라.  
+    volatility.append(high_prices[i]-low_prices[i]) #변동폭(volatility)의 리스트에 high_prices[i]의 원솟값 - low_price[i]의 원솟값을 담는다.
+print(volatility) #리스트volatility 출력
+
+#190
+apart = [[101, 102], [201, 202], [301, 302]] #list안의 원소가 list로 되어있는 변수apart.
+for i in apart: #변수i에 변수apart의 원소를 담고 for문을 수행한다. *변수i에 리스트형태의 원소값이 담긴다*
+    for y in i: #변수y에 변수i의 원소를 담고 for문을 수행한다. *변수y에 변수i에 담겼던 리스트형태의 원소의 원소값을 담는다. 
+        print(y, '호') #변수y와 '호'를 출력
+
+#200
+ohlc = [["open", "high", "low", "close"], #변수ohlc에 리스트를 담는다.
+        [100, 110, 70, 100],
+        [200, 210, 180, 190],
+        [300, 310, 300, 310]]
+profit = 0 #변수 이익(profit)에 0지정.
+for i in ohlc[1:]: #변수ohcl의 2번째 원소부터 마지막 원소까지 3개을 변수i에 담아 for문을 실행.
+    profit = profit + (i[3] - i[0]) #변수 profit에 q변수 i의 4번째 원소값과 1번째 원소값을 담아 다시 변수profit에 담는다.
+print(profit) #변수profit을 출력하라.
+
+#210
+def message1(): #message1이란 함수는 'A'를 출력하라고 정의한다.
+    print("A")
+
+def message2(): #message2이란 함수는 'B'를 출력하라고 정의한다.
+    print("B")
+
+def message3(): #message3이란 함수는 'C'를 출력하라고 정의한다.
+    for i in range (3) : #(0부터 전3까지)3개의 원소를 i에 담아 for문을 실행한다.
+        message2() #message2()을 실행 = 'B'를 출력하라 
+        print("C") #'C'를 출력하라  
+    message1() #message1()을 실행 = 'A'를 출력하라. *for문이 다 돌아간후 그 다음 message1()을 실행*
+message3() #message3()을 실행하라
+
+#220
+def print_max(a, b, c) : #print_max(a,b,c)란 함수을 아래와 같이 정의한다.
+    max_val = 0 #0을 변수max_val에 담는다.
+    if a > max_val :  #a가 max_val보다 크면 max_val의 값에 a를 담는다.
+        max_val = a
+    if b > max_val : #b가 max_val보다 크면 max_val의 값에 b를 담는다.
+        max_val = b
+    if c > max_val : #c가 max_val보다 크면 max_val의 값에 c를 담는다.
+        max_val = c
+    print(max_val) #max_val의 값을 출력하라.
+#ex) a=1, b=2, c=3이라면 print_max(a,b,c) = c *과정* a(1)가 max_val(0)보다 큼 max_val = 1 > b(2)가 max_val(1)보다 큼 max_val = 2 > c(3)가 max_val(2)보다 큼 max_val = 3
+
+#230
+def my_print (a, b) : #my_print(a,b)란 함수는 ("왼쪽:", 매개변수a의 값) 과 ("오른쪽:", 매개변수b의 값)을 출력하라고 정의 한다.
+    print("왼쪽:", a)
+    print("오른쪽:", b)
+my_print(b=100, a=200) #my_print(매개변수a에 200을 담고 매개변수 b에 100을 담고)을 실행하라
+
+#240
+def 함수0(num) : #함수0(num)은 num에 곱하기2를 하고 함수0(num)에 돌려준다. 
+    return num * 2
+
+def 함수1(num) : #함수1(num)은 함수0의 num 더하기2를 하고 함수0에 돌려준다.
+    return 함수0(num + 2)
+
+def 함수2(num) : #함수2(num)은 num값에 10을 더하고 새로운 num값에 담은후 함수1(num)에 돌려준다.
+    num = num + 10
+    return 함수1(num)
+
+c = 함수2(2) #정의된 함수2(num) num = 2를 넣고 변수c에 담는다. 
+print(c) #변수c를 출력하라.
+#게산식: 함수2(2) > (2) + 10 > 함수1(12) > (12) + 2) > 함수0((14) > 14*2 > 28 
+
+#250
+import numpy as np #numpy 모듈을 불러오고 np라 정의한다.
+for i in np.arange(0, 5, 0.1): #0부터 5전까지 수를 0.1의씩 증가하는 원소을 변수i에 담아 for문을 실행한다. 
+    print(i) #변수i를 출력하라.
+
+#260
+class OMG : #'OMG'라는 class생성 
+    def print() : #class에서는 매서드를 작성하면 첫번째 매개변수는 메서드 호출하는 매개변수 ex)def print(self) 항상 매개변수 하나는 입력해야한다.
+        print("Oh my god") 
+mystock = OMG() #변수 mystock에 class OMG의 메서드를 담는다.
+mystock.print() #변수 mystock에 담긴 OMG() class의 메서드를 실행하라.
+
+#270
+class Stock: #Stock이란 class생성
+    def __init__(self, name, code, per, pbr, 배당수익률): #Stock class의  메서드 __init__의 매개변수를 이렇게 정의한다.
+        self.name = name #name을 호출하면 메서드의 name의 정보로 이동하게 하는 메서드의 수행문.
+        self.code = code #code을 호출하면 메서드의 code의 정보로 이동하게 하는 메서드의 수행문.
+        self.per = per #per을 호출하면 메서드의 per의 정보로 이동하게 하는 메서드의 수행문.
+        self.pbr = pbr #pbr을 호출하면 메서드의 pbr의 정보로 이동하게 하는 메서드의 수행문.
+        self.배당수익률 = 배당수익률 #배당수익률을 호출하면 메서드의 배당수익률의 정보로 이동하게 하는 메서드의 수행문.
+
+종목 = [] #변수 종목에 빈 list을 담는다.
+삼성 = Stock("삼성전자", "005930", 15.79, 1.33, 2.83) #변수 삼성에 ("삼성전자", "005930", 15.79, 1.33, 2.83)을 Stock class의 수행값을 담는다. 
+현대차 = Stock("현대차", "005380", 8.70, 0.35, 4.27) #변수 현대차에 ("현대차", "005380", 8.70, 0.35, 4.27)을 Stock classs의 수행값을 담는다.
+LG전자 = Stock("LG전자", "066570", 317.34, 0.69, 1.37) #변수 LG전자에 ("LG전자", "066570", 317.34, 0.69, 1.37)을 Stock class의 수행값을 담는다.
+
+종목.append(삼성) #변수 삼성을 종목list에 담는다.
+종목.append(현대차) #변수 현대차을 종목list에 담는다.
+종목.append(LG전자) #변수 LG전자을 종목list에 담는다.
+for i in 종목: #list 종목의 원소들을 변수i에 담고 for문을 수행한다.
+    print(i.code, i.per) #ex)처음 for문 수행 하면 종목의 원소중 삼성이 변수i에 들어감 그리하며 삼성.code(005930)와 삼성.per(15.79)을 출력한다.  
+
+#280
+    class Account: #class Account는 생성.
+    
+    def __init__(self, balance): #class Account의 메서드 __init__의 매개변수를 'balance'로 정의한다.
+        self.balance = balance #balance을 호출하면 메서드의 balance의 정보로 이동하게 하는 메서드의 수행문
+        self.deposit_log = [] #deposit_log에 빈 리스트를 담는다.
+        self.withdraw_log = [] #withdraw_log에 빈 리스트를 담는다.
+
+    def deposit(self, amount): #class의 메서드 deposit의 매개변수를  'amount'로 정의한다.
+        if amount >= 1: #amount의 값이 1보다 크거나 같으면
+            self.deposit_log.append(amount) # deposit_log의 리스트에 원소로 amount을 담고
+            self.balance =  self.balance + amount #balance에 amount값을 더하고 새로운 balance변수에 담는다.
+            
+    def withdraw(self, amount): #class의 메서드 deposit의 매개변수를  'amount'로 정의한다.
+        if self.balance > amount: #balance의 값이 amount의 값보다 크면
+            self.withdraw_log.append(amount) #withdraw_log의 리스트에 원소로 amount을 담고
+            self.balance =  self.balance - amount #balance에 amout값을 빼고 새로운 balance변수에 담는다.
+
+    def withdraw_history(self): #class의 메서드 withdraw_history는 
+        for amount in self.withdraw_log: #withdraw_log의 원소를 변수amount에 담고 for문을 실행한다.
+            print(amount) #변수 amount을 출력하라
+
+    def deposit_history(self): #class의 메서드 deposit_history는  
+        for amount in self.deposit_log: #deposit_log의 원소를 변수amount에 담고 for문을 실행한다.
+            print(amount) #변수 amount을 출력하라
+            
+k = Account(0) #변수k에 __init__ 메서드에 balance값이 0인 넣고 실행하고 Account class을 호출을 담는다.
+k.deposit(100) #deposit 메서드에 amount값이 100을 넣고 실행한다. 
+k.deposit(200) #deposit 메서드에 amount값이 200을 넣고 실행한다. 
+k.deposit(300) #deposit 메서드에 amount값이 300을 넣고 실행한다. 
+k.withdraw(100) #withdraw 메서드에 amount값이 100을 넣고 실행한다.
+k.withdraw(200) #withdraw 메서드에 amount값이 100을 넣고 실행한다.
+
+k.deposit_history() #Account class의 메서드 deposit_history()을 실행하라
+k.withdraw_history() #Account class의 메서드 withdraw_history()을 실행하라
+
+    def deposit_history(self):
+        for amount in self.deposit_log:
+            print(amount)
+
+
+k = Account("Kim", 1000)
+k.deposit(100)
+k.deposit(200)
+k.deposit(300)
+k.deposit_history()
+
+k.withdraw(100)
+k.withdraw(200)
+k.withdraw_history()
+
+#290
+class 부모: #부모란 class생성
+  def __init__(self): #부모 class는 메서드__init__라 정의. 
+    print("부모생성") #메서드__init__은 '부모생성'을 출력.
+
+class 자식(부모): #자식이란 class는 부모class을 상속한다.
+  def __init__(self): #자식 class는 메서드 __init__라 정의.
+    print("자식생성") #메서드 __init__은 '자식생성'을 출력.
+    super().__init__() #super()은 상속받은 부모 class을 호츨.
+    
+나 = 자식() #변수 나에 자식 class을 담는다. 
+#result) 자식class 실행 > '자식생성'출력 > 부모class 호출후 실행 > '부모생성'출력 
+
+#300
+per = ["10.31", "", "8.00"] #per변수에 원소가 3개인 list을 담는다.
+
+for i in per: #변수 per의 원소을 변수i에 담아 for문을 수행한다.
+    try: #실행 코드 *변수i의 원소를 를 출력한다.
+        print(float(i)) #i의 변수를 실수로 출력하라.
+    except: #예외가 발생했을 때 수행할 코드
+        print(0) #변수i의 원소가 실수가 아니면 0을 출력한다.
+    else: #예외가 발생하지 않았을 때 수행할 코드
+        print("clean data") #변수i의 원소가 실수면 'clean data'을 출력한다.
+    finally: #예외 발생 여부와 상관없이 항상 수행할 코드
+        print("변환 완료") #'변환 완료'를 출력하라
+#ex) 10.31이 for문에 들어가면 try를 통해 실수10.31로 첫문장 출력 실수임으로 
+#   예외 발생x else를 통해 'clean data'둘번째 문장 출력 
+#   항상 fianlly를 통해 마지막문장으로 '변환 완료' 출력 
